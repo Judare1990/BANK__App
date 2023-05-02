@@ -1,7 +1,7 @@
 const AppError = require('../utils/appError');
 
 const handleCastError22P02 = () =>
-  new AppError('Some type of data send does not match as expected', 400);
+  new AppError('Some type of data sent, does not match as expected', 400);
 
 const sendErrorDev = (err, res) => {
   res.status(err.statusCode).json({

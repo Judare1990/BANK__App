@@ -22,3 +22,5 @@ router
 router
   .route('/:id/history')
   .get(userMiddleware.validIfExistUser, userController.getTransferHistory);
+
+module.exports = router;

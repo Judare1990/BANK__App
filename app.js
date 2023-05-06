@@ -6,6 +6,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/error.controller');
 
 const userRouter = require('./routes/user.routes');
+const transferRouter = require('./routes/transfer.routes');
 
 const app = express();
 
@@ -13,11 +14,11 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-app.use(express, json());
+app.use(express.json());
 app.use(cors());
 
-app.use('api/v1/users', userRouter);
-app.use('api/v1/transfers');
+app.use('/api/v1/users', userRouter);
+app.use('/api/v1/transfers', transferRouter);
 
 app.all('*', (req, res, next) => {
   return next(

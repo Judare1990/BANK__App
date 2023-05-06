@@ -1,5 +1,5 @@
-const User = require('../models/User');
-const Transfer = require('../models/Transfer');
+const User = require('../models/user.models');
+const Transfer = require('../models/transfer.models');
 const catchAsync = require('../utils/catchAsync');
 
 exports.transfer = catchAsync(async (req, res) => {
